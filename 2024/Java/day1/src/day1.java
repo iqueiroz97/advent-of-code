@@ -53,6 +53,22 @@ public class day1 {
         System.out.println("Total Amount: " + totalAmount);
 
         // Part Two
-        
+        int similarityScore = 0;
+
+        for (Integer leftNumber : leftNumbers) {
+            int similarityCount = 0;
+
+            for (Integer rightNumber : rightNumbers) {
+                boolean isEqual = leftNumber.equals(rightNumber);
+
+                if (isEqual) {
+                    similarityCount += 1;
+                }
+            }
+
+            similarityScore += leftNumber * similarityCount;
+        }
+
+        System.out.println("Similarity Score: " + similarityScore);
     }
 }
